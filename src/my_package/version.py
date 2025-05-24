@@ -12,12 +12,14 @@
 # See LICENSE.rst for license information.
 #
 ##############################################################################
-"""Python package for doing science."""
+"""Definition of __version__."""
 
-# package version
-from my_package.version import __version__
+#  We do not use the other three variables, but can be added back if needed.
+#  __all__ = ["__date__", "__git_commit__", "__timestamp__", "__version__"]
 
-# silence the pyflakes syntax checker
-assert __version__ or True
+# obtain version information
+from importlib.metadata import version
+
+__version__ = version("my_package")
 
 # End of file
